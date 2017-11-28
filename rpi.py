@@ -32,6 +32,6 @@ def ip_address():
 diagnostics = {
     'CPU Temp': cpu_temp,
     'IP Address': ip_address,
-    'Host': lambda: gethostname(),
+    'Host': lambda: gethostname(),  # pylint: disable=W0108
     'Operating System': " ".join(uname())
 }
