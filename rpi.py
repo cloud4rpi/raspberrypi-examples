@@ -2,6 +2,8 @@
 
 import subprocess
 import re
+from os import uname
+from socket import gethostname
 
 
 def parse_output(pattern, default, args):
