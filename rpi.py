@@ -2,6 +2,8 @@
 
 import subprocess
 import re
+from os import uname
+from socket import gethostname
 
 
 def parse_output(pattern, default, args):
@@ -25,3 +27,11 @@ def cpu_temp():
 
 def ip_address():
     return parse_output(r'(\S*)', '?', ['hostname', '-I'])
+
+
+diagnostics = {
+    'CPU Temp': cpu_temp,
+    'IP Address': ip_address,
+    'Host': lambda: gethostname(),  # pylint: disable=W0108
+    'Operating System': " ".join(uname())
+}
