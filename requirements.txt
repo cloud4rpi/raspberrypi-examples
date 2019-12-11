@@ -2,3 +2,4 @@ cloud4rpi
 pycodestyle
 pylint
 pyfakefs
+RPi.GPIO
